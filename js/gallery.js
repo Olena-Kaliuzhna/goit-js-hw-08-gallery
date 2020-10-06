@@ -45,7 +45,7 @@ function onGalleryClick(event) {
   window.addEventListener('keydown', onPressEscape);
   window.addEventListener('keydown', onPressArrow);
   closeModalBtn.addEventListener('click', onCloseModal);
-  lightboxOverlayEl.addEventListener('click', onlightboxOverlayClick);
+  lightboxOverlayEl.addEventListener('click', onLightboxOverlayClick);
 
   lightboxEl.classList.add('is-open');
   lightboxImageEl.src = event.target.dataset.source;
@@ -56,14 +56,14 @@ function onCloseModal() {
   window.removeEventListener('keydown', onPressEscape);
   window.removeEventListener('keydown', onPressArrow);
   closeModalBtn.removeEventListener('click', onCloseModal);
-  lightboxOverlayEl.removeEventListener('click', onlightboxOverlayClick);
+  lightboxOverlayEl.removeEventListener('click', onLightboxOverlayClick);
 
   lightboxEl.classList.remove('is-open');
   lightboxImageEl.src = '';
   lightboxImageEl.alt = '';
 }
 
-function onlightboxOverlayClick(event) {
+function onLightboxOverlayClick(event) {
   if (event.currentTarget === event.target) {
     onCloseModal();
   }
